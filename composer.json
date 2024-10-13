@@ -1,5 +1,5 @@
 {
-  "name": "rwsite/wp-content-blocks-plugin",
+  "name": "rwsite/wp-custom-sidebars-plugin",
   "description": "WordPress plugin for creating custom dynamic sidebars and use anywhere with shortcodes.",
   "minimum-stability": "stable",
   "license": "proprietary",
