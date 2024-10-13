@@ -3,6 +3,7 @@
   "description": "WordPress plugin for creating custom dynamic sidebars and use anywhere with shortcodes.",
   "minimum-stability": "stable",
   "license": "proprietary",
+  "type": "wordpress-plugin",
   "authors": [
     {
       "name": "Aleksei Tikhomirov",
