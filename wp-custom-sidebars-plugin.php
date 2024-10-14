@@ -13,6 +13,7 @@
  *
  * Text Domain: sidebars
  * Domain Path: /languages/
+ *
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -44,8 +45,6 @@ final class CustomSidebars {
 	}
 
 	protected function __construct() {
-
-		$this->title  = __( 'Custom Widget Area', 'sidebars' );
 		$this->stored = 'custom_sidebars';
 
 		// Load plugin text domain
@@ -73,6 +72,7 @@ final class CustomSidebars {
 	 */
 	public function load_plugin_textdomain() {
 		load_plugin_textdomain( 'sidebars', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+        $this->title  = __( 'Custom Widget Area', 'sidebars' );
 	}
 
 	/**
