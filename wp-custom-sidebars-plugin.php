@@ -1,23 +1,26 @@
 <?php
 /**
- * Plugin Name: Sidebars
+ * Plugin Name: Custom Classic Sidebars
  * Plugin URI:  https://rwsite.ru
  * Description: Create custom dynamic sidebars and use anywhere with shortcodes. How to use: <code>[custom_sidebars id=""]</code>
- * Version:     1.0.0
+ * Version:     1.0.2
  * Author:      Alex T
  * Author URI:  https://rwsite.ru
  *
- * Requires at least: 5.0
- * Tested up to: 6.8
+ * Requires at least: 5.2
+ * Tested up to: 6.7.2
  * License: GPLv3 or later
  *
- * Text Domain: sidebars
- * Domain Path: /languages/
+ * Requires PHP: 7.4
+ * Recommend PHP: 8.3
+ *
+ * Text Domain: wp-custom-sidebars-plugin
+ * Domain Path: /languages
  *
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+	exit;
 }
 
 final class CustomSidebars {
@@ -71,8 +74,8 @@ final class CustomSidebars {
 	 * @return void
 	 */
 	public function load_plugin_textdomain() {
-		load_plugin_textdomain( 'sidebars', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
-        $this->title  = __( 'Custom Widget Area', 'sidebars' );
+		load_plugin_textdomain( 'wp-custom-sidebars-plugin', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+        $this->title  = __( 'Custom Widget Area', 'wp-custom-sidebars-plugin' );
 	}
 
 	/**
@@ -105,8 +108,8 @@ final class CustomSidebars {
 			'custom-sidebars',
 			'objectL10n',
 			[
-				'shortcode'           => __( 'Shortcode', 'sidebars' ),
-				'delete_sidebar_area' => __( 'Are you sure you want to delete this sidebar?', 'sidebars' ),
+				'shortcode'           => __( 'Shortcode', 'wp-custom-sidebars-plugin' ),
+				'delete_sidebar_area' => __( 'Are you sure you want to delete this sidebar?', 'wp-custom-sidebars-plugin' ),
 			]
 		);
 
@@ -144,9 +147,9 @@ final class CustomSidebars {
                     <?php
                     endif; ?>
 
-                    <input type="text" name="add-widget" value="" placeholder="<?php _e('Enter name of the new widget area here', 'sidebars'); ?>" required/>
+                    <input type="text" name="add-widget" value="" placeholder="<?php _e('Enter name of the new widget area here', 'wp-custom-sidebars-plugin'); ?>" required/>
 
-                    <?php submit_button( __('Add Widget Area', 'sidebars'),'secondary large','custom-sidebar-submit'); ?>
+                    <?php submit_button( __('Add Widget Area', 'wp-custom-sidebars-plugin'),'secondary large','custom-sidebar-submit'); ?>
 
                     <input type='hidden' name='scs-delete-nonce' value="<?php echo wp_create_nonce('scs-delete-nonce'); ?>">
                 </form>
